@@ -4,7 +4,7 @@ services:
   medcentreloggingapi:
     image: swanseauniversitymedical/medcentre-dev
     container_name: medcentre
-    env_file: medcentre.standalone.config
+    env_file: medcentre.config
     ports:
       - "3002:80"
       
@@ -21,7 +21,7 @@ services:
 
   vault:
     image: vault:0.9.3
-    env_file: medcentre.standalone.config
+    env_file: medcentre.config
     ports:
       - "8200:8200"
     restart: on-failure
