@@ -4,4 +4,4 @@ echo '--------------'
 echo ''
 echo '==> Stopping MedCentre service'
 
-docker-compose -f ~/MedCentreDeploy/docker/docker-compose.yml stop
+docker-compose -f ~/MedCentre/docker/docker-compose.yml stop
