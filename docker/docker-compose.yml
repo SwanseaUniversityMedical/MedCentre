@@ -10,7 +10,7 @@ services:
       
   medCentreLoggingDb:
     image: postgres:alpine
-    env_file: medcentre.standalone.config
+    env_file: medcentre.config
     volumes:
       - type: volume
         source: medCentreLoggingDbVol
@@ -41,7 +41,7 @@ services:
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:6.1.2
     container_name: medcentreES
-    env_file: medcentre.standalone.config
+    env_file: medcentre.config
     environment:
       - discovery.type=single-node
       - xpack.security.enabled=false
