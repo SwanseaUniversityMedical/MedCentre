@@ -7,7 +7,7 @@ echo ''
 
 # stop all the running services
 echo '==> Stopping any running MedGATE Cneter services'
-docker-compose -f ~/MedCentreDeploy/docker/docker-compose.yml stop
+docker-compose -f ~/MedCentre/docker/docker-compose.yml stop
 
 echo '==> Pulling latest image for MedGATE Cneter'
 #remove medcentre container and pull the latest medcentre image 
@@ -19,7 +19,7 @@ if [ "$(docker ps -aq -f name='medcentre')" ]; then
 fi
 
 echo '==> Building Docker Containers'
-docker-compose -f ~/MedCentreDeploy/docker/docker-compose.yml up --build -d
+docker-compose -f ~/MedCentre/docker/docker-compose.yml up --build -d
 
 clear
 echo '==> Running Docker Containers'
