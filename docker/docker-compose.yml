@@ -4,13 +4,13 @@ services:
   medcentreloggingapi:
     image: swanseauniversitymedical/medcentre-dev
     container_name: medcentre
-    env_file: medcentre.config
+    env_file: ../medcentre.config
     ports:
       - "3002:80"
       
   medCentreLoggingDb:
     image: postgres:alpine
-    env_file: medcentre.config
+    env_file: ../medcentre.config
     volumes:
       - type: volume
         source: medCentreLoggingDbVol
@@ -21,7 +21,7 @@ services:
 
   vault:
     image: vault:0.9.3
-    env_file: medcentre.config
+    env_file: ../medcentre.config
     ports:
       - "8200:8200"
     restart: on-failure
@@ -41,7 +41,7 @@ services:
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:6.1.2
     container_name: medcentreES
-    env_file: medcentre.config
+    env_file: ../medcentre.config
     environment:
       - discovery.type=single-node
       - xpack.security.enabled=false
